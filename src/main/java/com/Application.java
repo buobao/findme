@@ -3,6 +3,7 @@ package com;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,14 @@ public class Application extends SpringBootServletInitializer{
     @Bean
     public Queue queue(){
         return new ActiveMQQueue("sample.queue");
+    }
+
+    @Bean
+    public SecurityProperties securityProperties(){
+        SecurityProperties security = new SecurityProperties();
+
+        security.getBasic().setPath("");     // empty so home page is unsecured
+        return security;
     }
 
     public static void main(String[] args){

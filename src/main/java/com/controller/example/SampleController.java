@@ -23,10 +23,4 @@ public class SampleController {
     public Map<String, String> helloWorld(){
         return Collections.singletonMap("message",helloWorldService.getHelloMessage());
     }
-
-    @RequestMapping("/foo")
-    @ResponseBody
-    public String foo() {
-        throw new IllegalArgumentException("Server error");
-    }
 }
