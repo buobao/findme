@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by dqf on 2015/8/12.
+ * 通过返回字串显示jsp页面
  */
 @Controller
 public class RestfulController {

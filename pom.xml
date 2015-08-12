@@ -32,15 +32,41 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>logback-classic</artifactId>
+                    <groupId>ch.qos.logback</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -56,8 +82,28 @@
             <artifactId>jstl</artifactId>
         </dependency>
 
-        <!-- Hibernate validator -->
+        <!-- log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
 
+
+
+
+
+        <!-- Other Thinking -->
+        <!-- Hibernate validator -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
@@ -114,6 +160,14 @@
             <name>Team Nexus Repository</name>
             <url>http://localhost:8081/nexus/content/groups/public</url>
         </repository>
+        <repository>
+            <id>mvn-repository</id>
+            <url>http://mvnrepository.com/</url>
+        </repository>
+        <repository>
+            <id>public</id>
+            <url>http://repository.sonatype.org/content/groups/public/</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
@@ -125,6 +179,14 @@
             <id>nexus</id>
             <name>Team Nexus Repository</name>
             <url>http://localhost:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>mvn-repository</id>
+            <url>http://mvnrepository.com/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>public</id>
+            <url>http://repository.sonatype.org/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

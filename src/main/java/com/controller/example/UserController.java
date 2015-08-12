@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 /**
  * Created by dqf on 2015/8/12.
+ * 通过ModelAndView显示jsp页面
  */
 @Controller
 public class UserController {
