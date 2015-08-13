@@ -1,5 +1,7 @@
 package com;
 
+import com.service.HelloWorldService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -14,11 +16,19 @@ import org.springframework.jms.annotation.EnableJms;
 @EnableAutoConfiguration
 @ComponentScan
 @EnableJms
-public class Application extends SpringBootServletInitializer{
+public class Application extends SpringBootServletInitializer /*implements CommandLineRunner*/ {
+    @Autowired
+    private HelloWorldService helloWorldService;
+
+//    @Override
+//    public void run(String... args) {
+//        System.out.println(this.helloWorldService.getHelloMessage());
+//    }
 
     public static void main(String[] args){
         SpringApplication.run(Application.class);
         System.out.println("Application Running...");
+
     }
 
     @Override
