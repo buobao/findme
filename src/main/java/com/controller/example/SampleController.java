@@ -14,6 +14,7 @@ import java.util.Map;
  * 请求返回json数据
  */
 @Controller
+@RequestMapping("/public")
 public class SampleController {
     @Autowired
     private HelloWorldService helloWorldService;

@@ -11,7 +11,7 @@ import java.util.Map;
  * 使用jsp页面模版
  */
 @Controller
-public class ActuatorUiCantroller {
+public class ActuatorUiController {
     @RequestMapping("/home")
     public String home(Map<String,Object> model){
         model.put("message","This is my house!");

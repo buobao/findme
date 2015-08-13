@@ -15,6 +15,7 @@ import java.util.UUID;
  * 通过返回字串显示jsp页面
  */
 @Controller
+@RequestMapping("/public")
 public class RestfulController {
     @Value("${test.msg:somthing}")           //通过这个标记可以读取配置文件中的信息
     private String msg;
