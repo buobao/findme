@@ -108,6 +108,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:1.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.5" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.session:spring-session:1.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-redis:1.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:1.4.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.6.0" level="project" />

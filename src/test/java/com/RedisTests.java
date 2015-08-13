@@ -1,5 +1,6 @@
 package com;
 
+import com.utils.JedisUtil;
 import org.junit.Rule;
 import org.junit.Test;
 import org.springframework.boot.test.OutputCapture;
@@ -15,9 +16,14 @@ public class RedisTests {
 
     @Test
     public void testDefaultSetting() throws Exception{
-        Jedis jedis = new Jedis("127.0.0.1",6379);
+        Jedis jedis = JedisUtil.getJedis();
         jedis.set("springBootTest","This is redis test string!");
         System.out.println("Get from Redis: value->"+jedis.get("springBootTest"));
+        JedisUtil.returnJedis(jedis);
+        jedis = JedisUtil.getJedis();
+        jedis.set("springBootTest","This is redis test string2!");
+        System.out.println("Get from Redis: value->" + jedis.get("springBootTest"));
+        JedisUtil.returnJedis(jedis);
     }
 
     private boolean redisServerRunning(Throwable ex){
