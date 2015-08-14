@@ -29,6 +29,8 @@
         <spring.session.version>1.0.2.RELEASE</spring.session.version>
         <jedis.version>2.6.0</jedis.version>
         <shiro.version>1.2.4</shiro.version>
+        <shiro.redis.version>1.0.0-RELEASE</shiro.redis.version>
+        <apache.common.version>3.3.2</apache.common.version>
     </properties>
 
     <dependencies>
@@ -169,11 +171,29 @@
             <version>${shiro.version}</version>
         </dependency>
 
+        <!-- shiro-redis -->
+        <dependency>
+            <groupId>org.crazycake</groupId>
+            <artifactId>shiro-redis</artifactId>
+            <version>${shiro.redis.version}</version>
+        </dependency>
+
+        <!-- MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>1.46.0</version>
+        </dependency>
+
         <!-- apache common -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.3.2</version>
+            <version>${apache.common.version}</version>
         </dependency>
 
 

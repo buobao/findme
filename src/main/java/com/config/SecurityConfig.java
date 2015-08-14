@@ -1,17 +1,18 @@
 package com.config;
 
 import com.shiro.ShiroRealmImpl;
-import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.crazycake.shiro.RedisCacheManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
  * Created by dqf on 2015/8/13.
@@ -25,11 +26,15 @@ public class SecurityConfig {
         return new ShiroRealmImpl();
     }
 
-    @Bean(name="shiroEhcacheManager")
-    public EhCacheManager getEhCacheManager(){
-        EhCacheManager em = new EhCacheManager();
-        em.setCacheManagerConfigFile("classpath:ehcache-shiro.xml");
-        return em;
+    @Bean(name="shiroReidsManager")
+    public RedisCacheManager getRedisManager(){
+        RedisCacheManager rm = new RedisCacheManager();
+        //EhCacheManager em = new EhCacheManager();
+        //em.setCacheManagerConfigFile("classpath:ehcache-shiro.xml");
+        ResourceBundle bundle = ResourceBundle.getBundle("application");
+        rm.setHost(bundle.getString("redis.host"));
+        rm.setPort(Integer.valueOf(bundle.getString("redis.port")));
+        return rm;
     }
 
     @Bean(name="lifecycleBeanPostProcessor")
@@ -48,7 +53,7 @@ public class SecurityConfig {
     public DefaultWebSecurityManager getDefaultWebSecurityManager(){
         DefaultWebSecurityManager dwsm = new DefaultWebSecurityManager();
         dwsm.setRealm(getShiroRealm());
-        dwsm.setCacheManager(getEhCacheManager());
+        dwsm.setCacheManager(getRedisManager());
         return dwsm;
     }
 
