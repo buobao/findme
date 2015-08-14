@@ -189,6 +189,12 @@
             <version>1.46.0</version>
         </dependency>
 
+        <!-- mail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
         <!-- apache common -->
         <dependency>
             <groupId>org.apache.commons</groupId>
