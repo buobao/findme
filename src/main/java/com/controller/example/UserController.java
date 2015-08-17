@@ -18,7 +18,7 @@ import javax.validation.Valid;
  * 通过ModelAndView显示jsp页面
  */
 @Controller
-@RequestMapping("/com")
+@RequestMapping("/public")
 public class UserController {
     private final UserService userService;
 
