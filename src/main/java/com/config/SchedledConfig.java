@@ -1,16 +1,7 @@
 package com.config;
 
-import com.quartz.JobImpl;
-import org.quartz.JobDetail;
-import org.quartz.Trigger;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
-import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
-import org.springframework.scheduling.quartz.SchedulerFactoryBean;
-
-import java.util.*;
 
 /**
  * Created by dqf on 2015/8/14.
@@ -18,38 +9,38 @@ import java.util.*;
 @Configuration
 @ConditionalOnProperty(name = "quartz.enabled")
 public class SchedledConfig {
-    @Bean
-    public JobImpl quartzJob(){
-        JobImpl jobimpl = new JobImpl();
-        return jobimpl;
-    }
-
-    @Bean
-    public MethodInvokingJobDetailFactoryBean methodInvokingJobDetailFactoryBean(){
-        MethodInvokingJobDetailFactoryBean mfb = new MethodInvokingJobDetailFactoryBean();
-        mfb.setTargetObject(quartzJob());
-        mfb.setTargetMethod("evalExpire");
-        mfb.setConcurrent(false);
-        return mfb;
-    }
-
-    @Bean
-    public CronTriggerFactoryBean cronTriggerFactoryBean(){
-        CronTriggerFactoryBean cBean = new CronTriggerFactoryBean();
-        cBean.setJobDetail((JobDetail) methodInvokingJobDetailFactoryBean());
-        cBean.setCronExpression("0 */1 * * * ?");
-        return cBean;
-    }
-
-    @Bean
-    public SchedulerFactoryBean schedulerFactoryBean(){
-        SchedulerFactoryBean sBean = new SchedulerFactoryBean();
-        List<Trigger> list = new ArrayList<Trigger>();
-        sBean.setTriggers((Trigger)cronTriggerFactoryBean());
-        sBean.setStartupDelay(2);
-
-        return sBean;
-    }
+//    @Bean
+//    public JobImpl quartzJob(){
+//        JobImpl jobimpl = new JobImpl();
+//        return jobimpl;
+//    }
+//
+//    @Bean
+//    public MethodInvokingJobDetailFactoryBean methodInvokingJobDetailFactoryBean(){
+//        MethodInvokingJobDetailFactoryBean mfb = new MethodInvokingJobDetailFactoryBean();
+//        mfb.setTargetObject(quartzJob());
+//        mfb.setTargetMethod("evalExpire");
+//        mfb.setConcurrent(false);
+//        return mfb;
+//    }
+//
+//    @Bean
+//    public CronTriggerFactoryBean cronTriggerFactoryBean(){
+//        CronTriggerFactoryBean cBean = new CronTriggerFactoryBean();
+//        cBean.setJobDetail((JobDetail) methodInvokingJobDetailFactoryBean());
+//        cBean.setCronExpression("0 */1 * * * ?");
+//        return cBean;
+//    }
+//
+//    @Bean
+//    public SchedulerFactoryBean schedulerFactoryBean(){
+//        SchedulerFactoryBean sBean = new SchedulerFactoryBean();
+//        List<Trigger> list = new ArrayList<Trigger>();
+//        sBean.setTriggers((Trigger)cronTriggerFactoryBean());
+//        sBean.setStartupDelay(2);
+//
+//        return sBean;
+//    }
 
 
 }
