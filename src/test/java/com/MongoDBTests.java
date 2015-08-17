@@ -1,7 +1,7 @@
 package com;
 
 import com.mongodb.*;
-import com.utils.MongoUtil;
+import com.utils.db.MongoUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;

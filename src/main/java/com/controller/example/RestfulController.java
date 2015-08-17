@@ -1,6 +1,6 @@
 package com.controller.example;
 
-import com.utils.JedisUtil;
+import com.utils.db.JedisUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

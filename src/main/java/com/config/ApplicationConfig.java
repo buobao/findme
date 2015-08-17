@@ -38,6 +38,9 @@ public class ApplicationConfig {
     @Autowired
     EntityInterceptor entityInterceptor;
 
+    /**
+     * activeMQ
+     * */
     @Bean
     public Queue queue(){
         return new ActiveMQQueue("sample.queue");

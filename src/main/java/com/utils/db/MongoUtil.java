@@ -1,4 +1,4 @@
-package com.utils;
+package com.utils.db;
 
 import com.mongodb.DB;
 import com.mongodb.Mongo;

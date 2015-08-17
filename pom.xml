@@ -35,6 +35,7 @@
         <hibernate.version>4.3.10.Final</hibernate.version>
         <druid.version>1.0.10</druid.version>
         <commons-io.version>2.4</commons-io.version>
+        <pinyin4j.version>2.5.0</pinyin4j.version>
     </properties>
 
     <dependencies>
@@ -231,6 +232,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>pinyin4j</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>${pinyin4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier><!--指定jdk版本-->
+        </dependency>
+
+
 
         <!-- quartz -->
         <dependency>
