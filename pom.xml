@@ -33,6 +33,8 @@
         <apache.common.version>3.3.2</apache.common.version>
         <quartz.version>2.2.1</quartz.version>
         <hibernate.version>4.3.10.Final</hibernate.version>
+        <druid.version>1.0.10</druid.version>
+        <commons-io.version>2.4</commons-io.version>
     </properties>
 
     <dependencies>
@@ -203,6 +205,27 @@
             <artifactId>commons-lang3</artifactId>
             <version>${apache.common.version}</version>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
         <!-- quartz -->
         <dependency>
@@ -258,6 +281,13 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- alibaba pool -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
 
 
