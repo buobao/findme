@@ -10,7 +10,7 @@ import javax.persistence.Table;
  * Created by dqf on 2015/8/17.
  */
 @Entity
-@Table(name="ss_filemanage")
+@Table(name="sys_filemanage")
 public class FileManage extends BaseEntity {
 
 /**

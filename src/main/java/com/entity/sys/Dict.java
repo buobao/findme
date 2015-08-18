@@ -2,7 +2,7 @@ package com.entity.sys;
 
 import com.bean.BaseEnum;
 import com.bean.DictBean;
-import com.entity.sys.base.BaseEntity;
+import com.entity.base.SysBaseEntity;
 
 import javax.persistence.*;
 
@@ -10,8 +10,8 @@ import javax.persistence.*;
  * Created by dqf on 2015/8/17.
  */
 @Entity
-@Table(name="ss_dict")
-public class Dict extends BaseEntity {
+@Table(name="sys_dict")
+public class Dict extends SysBaseEntity {
     private static final long serialVersionUID = -2755329278196422648L;
 
     public Dict(){
