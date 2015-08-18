@@ -2,7 +2,7 @@ package com.dao.impl;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;
-import com.dao.MongoBaseDao;
+import com.dao.base.MongoBaseDao;
 import com.entity.base.MongoEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Sort;

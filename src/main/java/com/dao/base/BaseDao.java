@@ -1,4 +1,4 @@
-package com.dao;
+package com.dao.base;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;

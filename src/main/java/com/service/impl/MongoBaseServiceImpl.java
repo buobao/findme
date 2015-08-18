@@ -1,7 +1,7 @@
 package com.service.impl;
 
 import com.bean.Pager;
-import com.dao.MongoBaseDao;
+import com.dao.base.MongoBaseDao;
 import com.entity.base.MongoEntity;
 import com.service.MongoBaseService;
 import com.service.common.ResultService;

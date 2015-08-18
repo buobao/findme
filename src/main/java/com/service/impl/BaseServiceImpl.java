@@ -2,7 +2,7 @@ package com.service.impl;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;
-import com.dao.BaseDao;
+import com.dao.base.BaseDao;
 import com.entity.base.Entity;
 import com.service.BaseService;
 import org.hibernate.Query;

@@ -2,7 +2,7 @@ package com.dao.impl;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;
-import com.dao.BaseDao;
+import com.dao.base.BaseDao;
 import com.entity.base.Entity;
 import com.utils.CommonUtil;
 import net.sf.json.JSONArray;
