@@ -1,4 +1,4 @@
-package com.dao.impl;
+package com.dao.impl.base;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;
@@ -36,7 +36,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
         Type type = c.getGenericSuperclass();
         if(type instanceof ParameterizedType) {
             Type[] parameterizedType = ((ParameterizedType)type).getActualTypeArguments();
-            this.entityClass = (Class)parameterizedType[0];
+            this.entityClass = (Class<T>)parameterizedType[0];
         }
 
     }
