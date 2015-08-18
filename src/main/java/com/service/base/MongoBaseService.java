@@ -1,4 +1,4 @@
-package com.service;
+package com.service.base;
 
 import com.bean.Pager;
 import com.entity.base.MongoEntity;

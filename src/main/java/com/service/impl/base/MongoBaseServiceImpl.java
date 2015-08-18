@@ -1,9 +1,9 @@
-package com.service.impl;
+package com.service.impl.base;
 
 import com.bean.Pager;
 import com.dao.base.MongoBaseDao;
 import com.entity.base.MongoEntity;
-import com.service.MongoBaseService;
+import com.service.base.MongoBaseService;
 import com.service.common.ResultService;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;

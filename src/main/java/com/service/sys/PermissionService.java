@@ -1,29 +1,31 @@
-package com.dao.sys;
+package com.service.sys;
 
 
 import com.entity.sys.Permission;
 import java.util.List;
 
 /**
- * Dao接口 - 岗位
+ * Service接口 - 职权
  * ============================================================================
- * 版权所有 2013 。
+ * 版权所有 2013
+ * ----------------------------------------------------------------------------
  * 
- * @author hpj
- * @version 0.1 2013-1-16
- * ============================================================================
+ * @author 
+ * 
+ * @version 0.1 2013-05-09
  */
 
-public interface PermissionDao extends BaseEntityDao<Permission, String> {
+public interface PermissionService extends BaseEntityService<Permission, String> {
+
     /**
-     * 根据key来查找Permission
+     * 根据 businessKey查找Permission
      * @param businessKey
      * @return
      */
     public Permission getByKey(String businessKey);
 
     /**
-     * 根据资源类型查找
+     * 根据类型获取permission
      * @param type
      * @return
      */
@@ -40,4 +42,5 @@ public interface PermissionDao extends BaseEntityDao<Permission, String> {
      * 更新实体的文档状态
      */
     public void updateState(String key, String keyId);
+
 }

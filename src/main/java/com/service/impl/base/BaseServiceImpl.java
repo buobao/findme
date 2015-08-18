@@ -1,10 +1,10 @@
-package com.service.impl;
+package com.service.impl.base;
 
 import com.bean.BaseEnum;
 import com.bean.Pager;
 import com.dao.base.BaseDao;
 import com.entity.base.Entity;
-import com.service.BaseService;
+import com.service.base.BaseService;
 import org.hibernate.Query;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.stereotype.Service;
