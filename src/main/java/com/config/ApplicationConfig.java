@@ -99,7 +99,7 @@ public class ApplicationConfig {
         properties.put("hibernate.format_sql",_env.getProperty("hibernate.format_sql"));
         properties.put("hibernate.current_session_context_class",_env.getProperty("hibernate.current_session_context_class"));
         factory.setHibernateProperties(properties);
-        factory.setPackagesToScan("com.entity");   //可以设置多个
+        factory.setPackagesToScan("com.entity.sys","com.entity.core");   //可以设置多个
 
         return factory;
     }

@@ -38,7 +38,7 @@ public class MongoUtil {
     }
 
     public static DB getDB(String dbName){
-        if (dbName!=null && StringUtils.equals(dbName,"")){
+        if (dbName!=null && StringUtils.equals(dbName, "")){
             return mongo.getDB(dbName);
         }
         return mongo.getDB(DB_NAME);

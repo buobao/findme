@@ -1,13 +1,7 @@
 package com.controller.example;
 
-import com.service.HelloWorldService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Created by dqf on 2015/8/12.
@@ -16,12 +10,12 @@ import java.util.Map;
 @Controller
 @RequestMapping("/public")
 public class SampleController {
-    @Autowired
-    private HelloWorldService helloWorldService;
+    //@Autowired
+    //private HelloWorldService helloWorldService;
 
-    @RequestMapping("/hello")
-    @ResponseBody
-    public Map<String, String> helloWorld(){
-        return Collections.singletonMap("message",helloWorldService.getHelloMessage());
-    }
+    //@RequestMapping("/hello")
+    //@ResponseBody
+    //public Map<String, String> helloWorld(){
+    //    return Collections.singletonMap("message",helloWorldService.getHelloMessage());
+   // }
 }

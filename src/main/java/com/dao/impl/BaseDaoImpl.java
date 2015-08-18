@@ -5,14 +5,14 @@ import com.bean.Pager;
 import com.dao.BaseDao;
 import com.entity.base.Entity;
 import com.utils.CommonUtil;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.*;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
@@ -291,7 +291,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             detachedCriteria.add(Restrictions.like(CommonUtil.getPath(var18, var18.length - 1), "%" + value + "%"));
                         } else if(!(value instanceof Object[])) {
                             if(value instanceof Entity) {
-                                detachedCriteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), value), Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1) + ".id", ((Entity)value).getId())));
+                                detachedCriteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), value), Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1) + ".id", ((Entity) value).getId())));
                             } else {
                                 detachedCriteria.add(Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), value));
                             }
@@ -303,7 +303,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                                 for(int var22 = 0; var22 < var20.length; ++var22) {
                                     Object o1 = var20[var22];
                                     if(o1 instanceof Entity) {
-                                        var21[var22] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1) + ".id", ((Entity)o1).getId()));
+                                        var21[var22] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1) + ".id", ((Entity) o1).getId()));
                                     } else {
                                         var21[var22] = Restrictions.eq(CommonUtil.getPath(var18, var18.length - 1), o1);
                                     }
@@ -316,7 +316,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                         detachedCriteria.add(Restrictions.like(var17, "%" + value + "%"));
                     } else if(!(value instanceof Object[])) {
                         if(value instanceof Entity) {
-                            detachedCriteria.add(Restrictions.or(Restrictions.eq(var17, value), Restrictions.eq(var17 + ".id", ((Entity)value).getId())));
+                            detachedCriteria.add(Restrictions.or(Restrictions.eq(var17, value), Restrictions.eq(var17 + ".id", ((Entity) value).getId())));
                         } else {
                             detachedCriteria.add(Restrictions.eq(var17, value));
                         }
@@ -328,7 +328,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             for(int i = 0; i < values.length; ++i) {
                                 Object o = values[i];
                                 if(o instanceof Entity) {
-                                    criterions[i] = Restrictions.or(Restrictions.eq(var17, o), Restrictions.eq(var17 + ".id", ((Entity)o).getId()));
+                                    criterions[i] = Restrictions.or(Restrictions.eq(var17, o), Restrictions.eq(var17 + ".id", ((Entity) o).getId()));
                                 } else {
                                     criterions[i] = Restrictions.eq(var17, o);
                                 }
@@ -403,7 +403,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             detachedCriteria.add(Restrictions.like(CommonUtil.getPath(var20, var20.length - 1), "%" + value + "%"));
                         } else if(!(value instanceof Object[])) {
                             if(value instanceof Entity) {
-                                detachedCriteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity)value).getId())));
+                                detachedCriteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity) value).getId())));
                             } else {
                                 detachedCriteria.add(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value));
                             }
@@ -415,7 +415,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                                 for(int var24 = 0; var24 < var22.length; ++var24) {
                                     Object o1 = var22[var24];
                                     if(o1 instanceof Entity) {
-                                        var23[var24] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity)o1).getId()));
+                                        var23[var24] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity) o1).getId()));
                                     } else {
                                         var23[var24] = Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1);
                                     }
@@ -428,7 +428,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                         detachedCriteria.add(Restrictions.like(var19, "%" + value + "%"));
                     } else if(!(value instanceof Object[])) {
                         if(value instanceof Entity) {
-                            detachedCriteria.add(Restrictions.or(Restrictions.eq(var19, value), Restrictions.eq(var19 + ".id", ((Entity)value).getId())));
+                            detachedCriteria.add(Restrictions.or(Restrictions.eq(var19, value), Restrictions.eq(var19 + ".id", ((Entity) value).getId())));
                         } else {
                             detachedCriteria.add(Restrictions.eq(var19, value));
                         }
@@ -440,7 +440,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             for(int i = 0; i < values.length; ++i) {
                                 Object o = values[i];
                                 if(o instanceof Entity) {
-                                    criterions[i] = Restrictions.or(Restrictions.eq(var19, o), Restrictions.eq(var19 + ".id", ((Entity)o).getId()));
+                                    criterions[i] = Restrictions.or(Restrictions.eq(var19, o), Restrictions.eq(var19 + ".id", ((Entity) o).getId()));
                                 } else {
                                     criterions[i] = Restrictions.eq(var19, o);
                                 }
@@ -523,7 +523,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             criteria.add(Restrictions.like(CommonUtil.getPath(var20, var20.length - 1), "%" + value + "%"));
                         } else if(!(value instanceof Object[])) {
                             if(value instanceof Entity) {
-                                criteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity)value).getId())));
+                                criteria.add(Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity) value).getId())));
                             } else {
                                 criteria.add(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), value));
                             }
@@ -535,7 +535,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                                 for(int var24 = 0; var24 < var22.length; ++var24) {
                                     Object o1 = var22[var24];
                                     if(o1 instanceof Entity) {
-                                        var23[var24] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity)o1).getId()));
+                                        var23[var24] = Restrictions.or(Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1), Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1) + ".id", ((Entity) o1).getId()));
                                     } else {
                                         var23[var24] = Restrictions.eq(CommonUtil.getPath(var20, var20.length - 1), o1);
                                     }
@@ -548,7 +548,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                         criteria.add(Restrictions.like(var19, "%" + value + "%"));
                     } else if(!(value instanceof Object[])) {
                         if(value instanceof Entity) {
-                            criteria.add(Restrictions.or(Restrictions.eq(var19, value), Restrictions.eq(var19 + ".id", ((Entity)value).getId())));
+                            criteria.add(Restrictions.or(Restrictions.eq(var19, value), Restrictions.eq(var19 + ".id", ((Entity) value).getId())));
                         } else {
                             criteria.add(Restrictions.eq(var19, value));
                         }
@@ -560,7 +560,7 @@ public abstract class BaseDaoImpl<T extends Entity, PK extends Serializable> imp
                             for(int i = 0; i < values.length; ++i) {
                                 Object o = values[i];
                                 if(o instanceof Entity) {
-                                    criterions[i] = Restrictions.or(Restrictions.eq(var19, o), Restrictions.eq(var19 + ".id", ((Entity)o).getId()));
+                                    criterions[i] = Restrictions.or(Restrictions.eq(var19, o), Restrictions.eq(var19 + ".id", ((Entity) o).getId()));
                                 } else {
                                     criterions[i] = Restrictions.eq(var19, o);
                                 }

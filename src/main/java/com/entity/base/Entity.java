@@ -13,7 +13,7 @@ import java.util.Date;
  * Created by dqf on 2015/8/17.
  */
 @MappedSuperclass
-public class Entity implements Serializable{
+public class Entity implements Serializable {
     private static final long serialVersionUID=-2755329278196422648L;
     protected String id;
     protected Date createDate;
@@ -64,7 +64,7 @@ public class Entity implements Serializable{
     }
 
     public int hashCode() {
-        return this.id == null?System.identityHashCode(this):this.id.hashCode();
+        return this.id == null? System.identityHashCode(this):this.id.hashCode();
     }
 
     public boolean equals(Object obj) {

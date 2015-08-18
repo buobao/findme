@@ -11,7 +11,7 @@ public class Exceptions {
     }
 
     public static RuntimeException unchecked(Throwable ex) {
-        return ex instanceof RuntimeException?(RuntimeException)ex:new RuntimeException(ex);
+        return ex instanceof RuntimeException ?(RuntimeException)ex:new RuntimeException(ex);
     }
 
     public static String getStackTraceAsString(Throwable ex) {
