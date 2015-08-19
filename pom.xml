@@ -37,6 +37,7 @@
         <commons-io.version>2.4</commons-io.version>
         <pinyin4j.version>2.5.0</pinyin4j.version>
         <poi.version>3.9</poi.version>
+        <jackson.version>2.4.3</jackson.version>
     </properties>
 
     <dependencies>
@@ -365,6 +366,12 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
 
