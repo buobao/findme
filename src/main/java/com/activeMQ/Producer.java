@@ -23,7 +23,7 @@ public class Producer implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        send("Sample message");
+        //send("Sample message");
         LOG.info("Message is send......");
     }
 
