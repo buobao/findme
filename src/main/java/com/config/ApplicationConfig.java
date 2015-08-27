@@ -2,7 +2,6 @@ package com.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.entity.interceptor.EntityInterceptor;
-import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -16,7 +15,6 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.jms.Queue;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -38,13 +36,13 @@ public class ApplicationConfig {
     @Autowired
     EntityInterceptor entityInterceptor;
 
-    /**
-     * activeMQ
-     * */
-    @Bean
-    public Queue queue(){
-        return new ActiveMQQueue("sample.queue");
-    }
+//    /**
+//     * activeMQ
+//     * */
+//    @Bean
+//    public Queue queue(){
+//        return new ActiveMQQueue("sample.queue");
+//    }
 
     @Bean
     public SecurityProperties securityProperties(){
